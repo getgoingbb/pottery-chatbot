@@ -12,9 +12,10 @@
       background: #5b21b6; border: 3px solid #fff;
       box-shadow: 0 4px 20px rgba(0,0,0,0.25);
       cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: transform 0.2s; font-size: 28px; line-height: 1;
+      transition: transform 0.2s;
     }
     #sj-pot-btn:hover { transform: scale(1.08); }
+    #sj-pot-btn img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
     #sj-pot-btn .sj-badge {
       position: absolute; top: -4px; right: -4px;
       background: #ef4444; color: #fff; border-radius: 50%;
@@ -36,7 +37,7 @@
       background: #5b21b6; color: #fff; padding: 14px 16px;
       display: flex; align-items: center; gap: 10px;
     }
-    #sj-pot-header-icon { font-size: 32px; line-height: 1; }
+    #sj-pot-header-icon img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.5); }
     #sj-pot-header-info { flex: 1; }
     #sj-pot-header-name { font-weight: 700; font-size: 14px; }
     #sj-pot-header-sub { font-size: 11px; opacity: 0.85; }
@@ -65,6 +66,7 @@
     #sj-pot-disclaimer { font-size: 10px; color: #9ca3af; text-align: center; padding: 0 12px 8px; }
   `;
 
+  var AVATAR = 'https://jepsonpotteryvideos.com/st1.png';
   var GREETING = "Welcome! I'm Stephen Jepson — 60 years at the pottery wheel and still throwing every day. Ask me anything about centering, glazing, hand building, kiln temperatures, or life in the studio!";
 
   function init() {
@@ -74,7 +76,7 @@
 
     var btn = document.createElement('div');
     btn.id = 'sj-pot-btn';
-    btn.innerHTML = '🏺<div class="sj-badge">1</div>';
+    btn.innerHTML = '<img src="' + AVATAR + '" alt="Chat with Stephen Jepson"><div class="sj-badge">1</div>';
     btn.onclick = toggleChat;
     document.body.appendChild(btn);
 
@@ -82,7 +84,7 @@
     panel.id = 'sj-pot-panel';
     panel.innerHTML = `
       <div id="sj-pot-header">
-        <div id="sj-pot-header-icon">🏺</div>
+        <div id="sj-pot-header-icon"><img src="${AVATAR}" alt="Stephen Jepson"></div>
         <div id="sj-pot-header-info">
           <div id="sj-pot-header-name">Stephen Jepson</div>
           <div id="sj-pot-header-sub">Master Potter · 60+ Years at the Wheel</div>
